@@ -3,8 +3,10 @@ import java.util.List;
 import static java.util.Collections.emptyList;
 
 public class Route {
-    public Route(List<Integer> stops) {
+    private List<Integer> stops;
 
+    public Route(List<Integer> stops) {
+        this.stops = stops;
     }
 
     public Route() {
@@ -12,6 +14,6 @@ public class Route {
     }
 
     public Integer stopAtMinute(Integer minute) {
-        return 1;
+        return stops.get(minute);
     }
 }
