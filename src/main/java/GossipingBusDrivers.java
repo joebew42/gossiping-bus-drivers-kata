@@ -36,7 +36,7 @@ public class GossipingBusDrivers {
     }
 
     private int numberOfDrivers() {
-        return 2;
+        return drivers.size();
     }
 
     private Integer stopsNeededFrom(Integer minute) {
