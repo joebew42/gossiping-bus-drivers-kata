@@ -1,5 +1,12 @@
 public class Driver {
+
+    private int knownGossips;
+
+    public Driver() {
+        knownGossips = 1;
+    }
+
     public Integer knownGossips() {
-        return 1;
+        return knownGossips;
     }
 }

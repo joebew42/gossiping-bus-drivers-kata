@@ -1,11 +1,10 @@
 # DOING
 
-- A Driver starts with knowing one Gossip
+- Drivers can exchange all the gossips they know.
+    - A Driver exchanges one gossip
 
 # TODO
 
-- A Driver starts with knowing one Gossip
-- Drivers can exchange all the gossips they know.
 - Drivers will exchange the gossips they know only when they are at the same Stop.
 
 # Domain
