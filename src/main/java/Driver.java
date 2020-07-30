@@ -9,4 +9,13 @@ public class Driver {
     public Integer knownGossips() {
         return knownGossips;
     }
+
+    public void exchangeGossips(Driver other) {
+        addGossips();
+        other.addGossips();
+    }
+
+    private void addGossips() {
+        knownGossips++;
+    }
 }
