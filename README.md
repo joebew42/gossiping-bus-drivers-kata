@@ -1,7 +1,5 @@
 # TODO
 
-- When Drivers ends up at the same Stop they have to exchange gossips each other
-
 # Domain
 
 Driver -> Gossips
