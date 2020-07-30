@@ -24,11 +24,8 @@ public class Driver {
         other.addGossips(gossips());
     }
 
-    public void exchangeGossipsAtMinute(Integer minute, Driver otherDriver) {
-        Integer stop = route.stopAtMinute(minute);
-        Integer otherStop = otherDriver.route.stopAtMinute(minute);
-
-        if (stop.equals(otherStop)) {
+    public void exchangeGossipsAtMinute(Integer atMinute, Driver otherDriver) {
+        if (route.hasTheSameStopOf(otherDriver.route, atMinute)) {
             exchangeGossips(otherDriver);
         }
     }

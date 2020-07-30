@@ -21,4 +21,11 @@ public class Route {
     public Integer stopAtMinute(Integer minute) {
         return stops.get(minute % stops.size());
     }
+
+    Boolean hasTheSameStopOf(Route other, Integer atMinute) {
+        Integer stop = stopAtMinute(atMinute);
+        Integer otherStop = other.stopAtMinute(atMinute);
+
+        return stop.equals(otherStop);
+    }
 }
