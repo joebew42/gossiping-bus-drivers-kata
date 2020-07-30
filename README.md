@@ -1,13 +1,15 @@
 # TODO
 
-- Try to generalize the method `stopsNeededToShareAllGossips` to work with an arbitrary number of drivers
 - Introduce a builder for a Driver
 
 # Domain
 
-Driver -> Gossips
+```
+Driver ----> Gossips
+       \---> Route -> Stops
+```
 
-       -> Route -> Stops
+Each Driver has one Gossip.
 
 Each Route is appointed to one Driver.
 
@@ -18,6 +20,8 @@ A route looks like this: 1 2 3 4 5, and it is repeated over the whole day.
 480 minutes each day. All Drivers take one minute to go from one Stop to another.
 
 # Description
+
+[Link to the kata](https://kata-log.rocks/gossiping-bus-drivers-kata)
 
 Bus drivers like to gossip, everyone knows that. And bus drivers can gossip when they end up at the same stop. So now we are going to calculate after how many stops all the bus drivers know all the gossips. You will be given a number of bus routes that the drivers follow. Each driver starts with one gossip. Each route is appointed to 1 driver. When 2 or more drivers are at the same stop (even if it is the start), they can exchange all the gossips they know.
 
