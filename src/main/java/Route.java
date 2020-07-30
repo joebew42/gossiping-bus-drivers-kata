@@ -10,4 +10,8 @@ public class Route {
     public Route() {
         this(emptyList());
     }
+
+    public Integer stopAtMinute(Integer minute) {
+        return 1;
+    }
 }
