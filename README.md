@@ -1,7 +1,7 @@
 # TODO
 
 - When Drivers ends up at the same Stop they have to exchange gossips each other
-    - Get the stop at a certain minute from a route
+    - Route stops are repeated over the whole day
 - Extract the initial set of gossip in private method
 
 # Domain
