@@ -18,14 +18,11 @@ public class Route {
         this.stops = stops;
     }
 
-    public Integer stopAtMinute(Integer minute) {
-        return stops.get(minute % stops.size());
+    public Integer stopAt(Integer atMinute) {
+        return stops.get(atMinute % stops.size());
     }
 
-    Boolean hasTheSameStopOf(Route other, Integer atMinute) {
-        Integer stop = stopAtMinute(atMinute);
-        Integer otherStop = other.stopAtMinute(atMinute);
-
-        return stop.equals(otherStop);
+    public Boolean hasTheSameStopOf(Route other, Integer atMinute) {
+        return stopAt(atMinute).equals(other.stopAt(atMinute));
     }
 }
