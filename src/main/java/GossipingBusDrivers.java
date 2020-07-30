@@ -11,11 +11,17 @@ public class GossipingBusDrivers {
 
     public Integer stopsNeededToShareAllGossips() {
         for (int currentMinute = 0; currentMinute < MINUTES_IN_A_DAY; currentMinute++) {
+            exchangeAllGossipsAt(currentMinute);
+
             if (allGossipsExchanged()) {
-                return currentMinute;
+                return toNumberOfStops(currentMinute);
             }
         }
         return -1;
+    }
+
+    private void exchangeAllGossipsAt(Integer minute) {
+        driverA.exchangeGossipsAtMinute(minute, driverB);
     }
 
     private boolean allGossipsExchanged() {
@@ -31,5 +37,9 @@ public class GossipingBusDrivers {
 
     private int numberOfDrivers() {
         return 2;
+    }
+
+    private Integer toNumberOfStops(Integer minute) {
+        return minute + 1;
     }
 }
