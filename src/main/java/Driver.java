@@ -11,11 +11,11 @@ public class Driver {
     }
 
     public void exchangeGossips(Driver other) {
-        addGossips();
-        other.addGossips();
+        addGossips(other.knownGossips);
+        other.addGossips(knownGossips - other.knownGossips);
     }
 
-    private void addGossips() {
-        knownGossips++;
+    private void addGossips(Integer gossips) {
+        this.knownGossips += gossips;
     }
 }

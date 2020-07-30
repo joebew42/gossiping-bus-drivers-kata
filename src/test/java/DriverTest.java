@@ -19,4 +19,18 @@ public class DriverTest {
         assertEquals(valueOf(2), driver.knownGossips());
         assertEquals(valueOf(2), otherDriver.knownGossips());
     }
+
+    @Test
+    public void drivers_exchanges_all_the_known_gossips_each_other() {
+        Driver driverA = new Driver();
+        Driver driverB = new Driver();
+        Driver driverC = new Driver();
+
+        driverA.exchangeGossips(driverB);
+        driverB.exchangeGossips(driverC);
+
+        assertEquals(valueOf(2), driverA.knownGossips());
+        assertEquals(valueOf(3), driverB.knownGossips());
+        assertEquals(valueOf(3), driverC.knownGossips());
+    }
 }
