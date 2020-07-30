@@ -8,7 +8,7 @@ public class GossipingBusDrivers {
 
     private List<Driver> drivers;
 
-    public GossipingBusDrivers(Driver ... drivers) {
+    public GossipingBusDrivers(Driver... drivers) {
         this.drivers = asList(drivers);
     }
 
@@ -28,13 +28,10 @@ public class GossipingBusDrivers {
     }
 
     private boolean allGossipsExchanged() {
-        if (allGossipsExchangedFor(drivers.get(0)) && allGossipsExchangedFor(drivers.get(1))) {
-            return true;
-        }
-        return false;
+        return drivers.stream().allMatch(this::allGossipsExchanged);
     }
 
-    private boolean allGossipsExchangedFor(Driver driver) {
+    private boolean allGossipsExchanged(Driver driver) {
         return driver.numberOfGossips() == numberOfDrivers();
     }
 
