@@ -12,9 +12,7 @@ public class Driver {
 
     public Driver(Route route) {
         this.route = route;
-        knownGossips = new HashSet<>(){{
-            add(new Gossip());
-        }};
+        this.knownGossips = initialGossips();
     }
 
     public Integer numberOfGossips() {
@@ -36,5 +34,11 @@ public class Driver {
 
     private Set<Gossip> gossips() {
         return knownGossips;
+    }
+
+    private HashSet<Gossip> initialGossips() {
+        return new HashSet<>() {{
+            add(new Gossip());
+        }};
     }
 }
