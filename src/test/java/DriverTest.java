@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class DriverTest {
     @Test
     public void a_driver_always_start_knowing_only_one_gossip() {
-        assertEquals(valueOf(1), new Driver().knownGossips());
+        assertEquals(valueOf(1), new Driver().numberOfGossips());
     }
 
     @Test
@@ -17,8 +17,8 @@ public class DriverTest {
 
         driverA.exchangeGossips(driverB);
 
-        assertEquals(valueOf(2), driverA.knownGossips());
-        assertEquals(valueOf(2), driverB.knownGossips());
+        assertEquals(valueOf(2), driverA.numberOfGossips());
+        assertEquals(valueOf(2), driverB.numberOfGossips());
     }
 
     @Test
@@ -30,9 +30,9 @@ public class DriverTest {
         driverA.exchangeGossips(driverB);
         driverB.exchangeGossips(driverC);
 
-        assertEquals(valueOf(2), driverA.knownGossips());
-        assertEquals(valueOf(3), driverB.knownGossips());
-        assertEquals(valueOf(3), driverC.knownGossips());
+        assertEquals(valueOf(2), driverA.numberOfGossips());
+        assertEquals(valueOf(3), driverB.numberOfGossips());
+        assertEquals(valueOf(3), driverC.numberOfGossips());
     }
 
     @Test
@@ -44,7 +44,7 @@ public class DriverTest {
         driverA.exchangeGossips(driverB);
         driverB.exchangeGossips(driverA);
 
-        assertEquals(valueOf(2), driverA.knownGossips());
-        assertEquals(valueOf(2), driverB.knownGossips());
+        assertEquals(valueOf(2), driverA.numberOfGossips());
+        assertEquals(valueOf(2), driverB.numberOfGossips());
     }
 }

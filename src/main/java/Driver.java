@@ -1,21 +1,30 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public class Driver {
 
-    private Integer numberOfKnownGossips;
+    private final Set<Gossip> knownGossips;
 
     public Driver() {
-        numberOfKnownGossips = 1;
+        knownGossips = new HashSet<>(){{
+            add(new Gossip());
+        }};
     }
 
-    public Integer knownGossips() {
-        return numberOfKnownGossips;
+    public Integer numberOfGossips() {
+        return gossips().size();
     }
 
     public void exchangeGossips(Driver other) {
-        addGossips(other.knownGossips());
-        other.addGossips(knownGossips() - other.knownGossips());
+        addGossips(other.gossips());
+        other.addGossips(gossips());
     }
 
-    private void addGossips(Integer gossips) {
-        this.numberOfKnownGossips += gossips;
+    private void addGossips(Set<Gossip> gossips) {
+        this.gossips().addAll(gossips);
+    }
+
+    private Set<Gossip> gossips() {
+        return knownGossips;
     }
 }
