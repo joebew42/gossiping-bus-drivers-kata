@@ -4,8 +4,14 @@ import java.util.Set;
 public class Driver {
 
     private final Set<Gossip> knownGossips;
+    private Route route;
 
     public Driver() {
+        this(new Route());
+    }
+
+    public Driver(Route route) {
+        this.route = route;
         knownGossips = new HashSet<>(){{
             add(new Gossip());
         }};
@@ -18,6 +24,9 @@ public class Driver {
     public void exchangeGossips(Driver other) {
         addGossips(other.gossips());
         other.addGossips(gossips());
+    }
+
+    public void exchangeGossipsAtMinute(Integer stopNumber, Driver driver) {
     }
 
     private void addGossips(Set<Gossip> gossips) {

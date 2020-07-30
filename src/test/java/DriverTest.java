@@ -1,6 +1,9 @@
 import org.junit.Test;
 
+import java.util.List;
+
 import static java.lang.Integer.valueOf;
+import static java.util.List.of;
 import static org.junit.Assert.assertEquals;
 
 public class DriverTest {
@@ -44,5 +47,19 @@ public class DriverTest {
 
         assertEquals(valueOf(2), driverA.numberOfGossips());
         assertEquals(valueOf(2), driverB.numberOfGossips());
+    }
+
+    @Test
+    public void when_drivers_not_end_up_at_the_same_stop_they_not_exchange_gossips() {
+        Route routeA = new Route(of(1));
+        Route routeB = new Route(of(2));
+
+        Driver driverA = new Driver(routeA);
+        Driver driverB = new Driver(routeB);
+
+        driverA.exchangeGossipsAtMinute(1, driverB);
+
+        assertEquals(valueOf(1), driverA.numberOfGossips());
+        assertEquals(valueOf(1), driverB.numberOfGossips());
     }
 }
