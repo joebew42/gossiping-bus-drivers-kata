@@ -1,5 +1,8 @@
 # TODO
 
+- How many number of stops it takes to have all drivers on board with the latest gossips?
+- Introduce a builder for a Driver
+
 # Domain
 
 Driver -> Gossips
