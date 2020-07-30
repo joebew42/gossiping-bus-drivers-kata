@@ -9,7 +9,9 @@ public class DriverTest {
 
     @Test
     public void a_driver_always_start_knowing_only_one_gossip() {
-        assertEquals(valueOf(1), new Driver().numberOfGossips());
+        Driver driver = new Driver();
+
+        assertNumberOfGossips(1, driver.numberOfGossips());
     }
 
     @Test
@@ -19,8 +21,8 @@ public class DriverTest {
 
         driverA.exchangeGossips(driverB);
 
-        assertEquals(valueOf(2), driverA.numberOfGossips());
-        assertEquals(valueOf(2), driverB.numberOfGossips());
+        assertNumberOfGossips(2, driverA.numberOfGossips());
+        assertNumberOfGossips(2, driverB.numberOfGossips());
     }
 
     @Test
@@ -32,9 +34,9 @@ public class DriverTest {
         driverA.exchangeGossips(driverB);
         driverB.exchangeGossips(driverC);
 
-        assertEquals(valueOf(2), driverA.numberOfGossips());
-        assertEquals(valueOf(3), driverB.numberOfGossips());
-        assertEquals(valueOf(3), driverC.numberOfGossips());
+        assertNumberOfGossips(2, driverA.numberOfGossips());
+        assertNumberOfGossips(3, driverB.numberOfGossips());
+        assertNumberOfGossips(3, driverC.numberOfGossips());
     }
 
     @Test
@@ -45,8 +47,8 @@ public class DriverTest {
         driverA.exchangeGossips(driverB);
         driverB.exchangeGossips(driverA);
 
-        assertEquals(valueOf(2), driverA.numberOfGossips());
-        assertEquals(valueOf(2), driverB.numberOfGossips());
+        assertNumberOfGossips(2, driverA.numberOfGossips());
+        assertNumberOfGossips(2, driverB.numberOfGossips());
     }
 
     @Test
@@ -56,8 +58,8 @@ public class DriverTest {
 
         driverA.exchangeGossipsAtMinute(ONE, driverB);
 
-        assertEquals(valueOf(1), driverA.numberOfGossips());
-        assertEquals(valueOf(1), driverB.numberOfGossips());
+        assertNumberOfGossips(1, driverA.numberOfGossips());
+        assertNumberOfGossips(1, driverB.numberOfGossips());
     }
 
     @Test
@@ -67,7 +69,11 @@ public class DriverTest {
 
         driverA.exchangeGossipsAtMinute(ONE, driverB);
 
-        assertEquals(valueOf(2), driverA.numberOfGossips());
-        assertEquals(valueOf(2), driverB.numberOfGossips());
+        assertNumberOfGossips(2, driverA.numberOfGossips());
+        assertNumberOfGossips(2, driverB.numberOfGossips());
+    }
+
+    private void assertNumberOfGossips(int i, Integer actual) {
+        assertEquals(valueOf(i), actual);
     }
 }
