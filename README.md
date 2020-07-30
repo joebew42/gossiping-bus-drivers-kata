@@ -1,7 +1,6 @@
 # DOING
 
 - Drivers can exchange all the gossips they know.
-    - A Driver exchanges one gossip
 
 # TODO
 

@@ -5,12 +5,12 @@ import static org.junit.Assert.assertEquals;
 
 public class DriverTest {
     @Test
-    public void drivers_start_by_knowing_one_gossip() {
+    public void a_driver_always_start_knowing_only_one_gossip() {
         assertEquals(valueOf(1), new Driver().knownGossips());
     }
 
     @Test
-    public void drivers_exchanges_gossips_each_other() {
+    public void drivers_can_exchanges_gossips_each_other() {
         Driver driver = new Driver();
         Driver otherDriver = new Driver();
 
@@ -19,4 +19,6 @@ public class DriverTest {
         assertEquals(valueOf(2), driver.knownGossips());
         assertEquals(valueOf(2), otherDriver.knownGossips());
     }
+
+
 }
