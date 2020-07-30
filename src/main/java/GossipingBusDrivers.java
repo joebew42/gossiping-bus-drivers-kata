@@ -10,6 +10,9 @@ public class GossipingBusDrivers {
         this.driverB = driverB;
     }
 
+    public GossipingBusDrivers(Driver ... drivers) {
+    }
+
     public Integer stopsNeededToShareAllGossips() {
         for (int currentMinute = 0; currentMinute < MINUTES_IN_A_DAY; currentMinute++) {
             exchangeAllGossipsAt(currentMinute);
