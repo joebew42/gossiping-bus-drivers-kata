@@ -1,6 +1,6 @@
 public class Driver {
 
-    private int knownGossips;
+    private Integer knownGossips;
 
     public Driver() {
         knownGossips = 1;
@@ -11,8 +11,8 @@ public class Driver {
     }
 
     public void exchangeGossips(Driver other) {
-        addGossips(other.knownGossips);
-        other.addGossips(knownGossips - other.knownGossips);
+        addGossips(other.knownGossips());
+        other.addGossips(knownGossips() - other.knownGossips());
     }
 
     private void addGossips(Integer gossips) {
