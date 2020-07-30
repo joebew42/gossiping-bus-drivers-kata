@@ -11,13 +11,13 @@ public class DriverTest {
 
     @Test
     public void drivers_can_exchange_gossips_each_other() {
-        Driver driver = new Driver();
-        Driver otherDriver = new Driver();
+        Driver driverA = new Driver();
+        Driver driverB = new Driver();
 
-        driver.exchangeGossips(otherDriver);
+        driverA.exchangeGossips(driverB);
 
-        assertEquals(valueOf(2), driver.knownGossips());
-        assertEquals(valueOf(2), otherDriver.knownGossips());
+        assertEquals(valueOf(2), driverA.knownGossips());
+        assertEquals(valueOf(2), driverB.knownGossips());
     }
 
     @Test

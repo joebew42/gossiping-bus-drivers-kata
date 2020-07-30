@@ -1,11 +1,7 @@
-# DOING
-
-- Drivers can exchange all the gossips they know.
-
 # TODO
 
-- Use the name `DriverA`, `DriverB` in the tests. Seems more readable.
 - Drivers may not exchange the same gossip twice
+
 - Drivers will exchange the gossips they know only when they are at the same Stop.
 
 # Domain
