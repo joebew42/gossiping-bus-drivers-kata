@@ -63,7 +63,6 @@ public class DriverTest {
     }
 
     @Test
-    @Ignore
     public void when_drivers_end_up_at_the_same_stop_they_exchange_gossips() {
         Driver driverA = new Driver(new Route(1));
         Driver driverB = new Driver(new Route(1));

@@ -25,7 +25,12 @@ public class Driver {
     }
 
     public void exchangeGossipsAtMinute(Integer minute, Driver otherDriver) {
+        Integer stop = route.stopAtMinute(minute);
+        Integer otherStop = otherDriver.route.stopAtMinute(minute);
 
+        if (stop.equals(otherStop)) {
+            exchangeGossips(otherDriver);
+        }
     }
 
     private void addGossips(Set<Gossip> gossips) {
