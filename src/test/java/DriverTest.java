@@ -36,7 +36,6 @@ public class DriverTest {
     }
 
     @Test
-    @Ignore
     public void drivers_not_exchanges_the_same_gossip_twice() {
         Driver driverA = new Driver();
         Driver driverB = new Driver();
