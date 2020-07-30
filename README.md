@@ -1,7 +1,3 @@
-# TODO
-
-- Introduce a builder for a Driver
-
 # Domain
 
 ```

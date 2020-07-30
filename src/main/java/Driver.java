@@ -7,7 +7,7 @@ public class Driver {
     private Route route;
 
     public Driver() {
-        this(new Route());
+        this(Route.empty());
     }
 
     public Driver(Route route) {

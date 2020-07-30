@@ -53,8 +53,8 @@ public class DriverTest {
 
     @Test
     public void when_drivers_not_end_up_at_the_same_stop_they_not_exchange_gossips() {
-        Driver driverA = new Driver(new Route(1));
-        Driver driverB = new Driver(new Route(2));
+        Driver driverA = new Driver(Route.withStops(1));
+        Driver driverB = new Driver(Route.withStops(2));
 
         driverA.exchangeGossipsAtMinute(ONE, driverB);
 
@@ -64,8 +64,8 @@ public class DriverTest {
 
     @Test
     public void when_drivers_end_up_at_the_same_stop_they_exchange_gossips() {
-        Driver driverA = new Driver(new Route(1));
-        Driver driverB = new Driver(new Route(1));
+        Driver driverA = new Driver(Route.withStops(1));
+        Driver driverB = new Driver(Route.withStops(1));
 
         driverA.exchangeGossipsAtMinute(ONE, driverB);
 

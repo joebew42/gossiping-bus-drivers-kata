@@ -14,7 +14,7 @@ public class RouteTest {
 
     @Test
     public void return_the_stop_at_a_specific_minute() {
-        Route route = new Route(2, 4, 8);
+        Route route = Route.withStops(2, 4, 8);
 
         assertEquals(valueOf(2), route.stopAt(MINUTE_ZERO));
         assertEquals(valueOf(4), route.stopAt(MINUTE_ONE));
@@ -23,7 +23,7 @@ public class RouteTest {
 
     @Test
     public void stops_are_repeated_over_and_over() {
-        Route route = new Route(2, 4, 8);
+        Route route = Route.withStops(2, 4, 8);
 
         assertEquals(valueOf(2), route.stopAt(MINUTE_THREE));
         assertEquals(valueOf(4), route.stopAt(MINUTE_FOUR));
