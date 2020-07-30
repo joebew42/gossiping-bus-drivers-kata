@@ -11,10 +11,10 @@ public class Route {
     }
 
     public Route(Integer ... stops) {
-        this(asList(stops));
+        this.stops = asList(stops);
     }
 
-    public Route(List<Integer> stops) {
+    private Route(List<Integer> stops) {
         this.stops = stops;
     }
 
