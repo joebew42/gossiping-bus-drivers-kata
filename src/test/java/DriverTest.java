@@ -1,3 +1,4 @@
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static java.lang.Integer.valueOf;
@@ -59,5 +60,17 @@ public class DriverTest {
 
         assertEquals(valueOf(1), driverA.numberOfGossips());
         assertEquals(valueOf(1), driverB.numberOfGossips());
+    }
+
+    @Test
+    @Ignore
+    public void when_drivers_end_up_at_the_same_stop_they_exchange_gossips() {
+        Driver driverA = new Driver(new Route(of(1)));
+        Driver driverB = new Driver(new Route(of(1)));
+
+        driverA.exchangeGossipsAtMinute(ONE, driverB);
+
+        assertEquals(valueOf(2), driverA.numberOfGossips());
+        assertEquals(valueOf(2), driverB.numberOfGossips());
     }
 }

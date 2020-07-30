@@ -26,7 +26,8 @@ public class Driver {
         other.addGossips(gossips());
     }
 
-    public void exchangeGossipsAtMinute(Integer stopNumber, Driver driver) {
+    public void exchangeGossipsAtMinute(Integer minute, Driver otherDriver) {
+
     }
 
     private void addGossips(Set<Gossip> gossips) {
