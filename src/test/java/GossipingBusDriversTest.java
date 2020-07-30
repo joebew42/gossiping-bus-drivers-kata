@@ -25,7 +25,6 @@ public class GossipingBusDriversTest {
     }
 
     @Test
-    @Ignore
     public void when_all_gossips_are_exchanged_among_all_drivers_returns_the_number_of_needed_stops() {
         Driver driverA = new Driver(new Route(3, 1, 2, 3));
         Driver driverB = new Driver(new Route(3, 2, 3, 1));
