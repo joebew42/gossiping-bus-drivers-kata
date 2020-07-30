@@ -5,7 +5,7 @@ Driver ----> Gossips
        \---> Route -> Stops
 ```
 
-Each Driver has one Gossip.
+Each Driver has one Driver.Gossip.
 
 Each Route is appointed to one Driver.
 

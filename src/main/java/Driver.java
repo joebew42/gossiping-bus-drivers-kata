@@ -43,4 +43,7 @@ public class Driver {
             add(new Gossip());
         }};
     }
+
+    private class Gossip {
+    }
 }
