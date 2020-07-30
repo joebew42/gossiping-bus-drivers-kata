@@ -1,7 +1,5 @@
 # TODO
 
-- Drivers may not exchange the same gossip twice
-
 - Drivers will exchange the gossips they know only when they are at the same Stop.
 
 # Domain
