@@ -19,10 +19,14 @@ public class GossipingBusDrivers {
     }
 
     private boolean allGossipsExchanged() {
-        if (driverA.numberOfGossips() == numberOfDrivers() && driverB.numberOfGossips() == numberOfDrivers()) {
+        if (allGossipsExchangedFor(driverA) && allGossipsExchangedFor(driverB)) {
             return true;
         }
         return false;
+    }
+
+    private boolean allGossipsExchangedFor(Driver driver) {
+        return driver.numberOfGossips() == numberOfDrivers();
     }
 
     private int numberOfDrivers() {
