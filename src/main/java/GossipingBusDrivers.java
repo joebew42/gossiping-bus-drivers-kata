@@ -24,7 +24,9 @@ public class GossipingBusDrivers {
     }
 
     private void exchangeAllGossipsAt(Integer minute) {
-        drivers.get(0).exchangeGossipsAtMinute(minute, drivers.get(1));
+        for (int i = 0; i < drivers.size() - 1; i++) {
+            drivers.get(i).exchangeGossipsAtMinute(minute, drivers.get(i + 1));
+        }
     }
 
     private boolean allGossipsExchanged() {
