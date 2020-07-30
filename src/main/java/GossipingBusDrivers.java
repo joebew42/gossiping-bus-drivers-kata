@@ -1,5 +1,6 @@
 public class GossipingBusDrivers {
-    public static final int MINUTES_IN_A_DAY = 480;
+    public static final Integer MINUTES_IN_A_DAY = 480;
+    public static final Integer NEVER = -1;
 
     private Driver driverA;
     private Driver driverB;
@@ -14,10 +15,10 @@ public class GossipingBusDrivers {
             exchangeAllGossipsAt(currentMinute);
 
             if (allGossipsExchanged()) {
-                return toNumberOfStops(currentMinute);
+                return stopsNeededFrom(currentMinute);
             }
         }
-        return -1;
+        return NEVER;
     }
 
     private void exchangeAllGossipsAt(Integer minute) {
@@ -39,7 +40,7 @@ public class GossipingBusDrivers {
         return 2;
     }
 
-    private Integer toNumberOfStops(Integer minute) {
+    private Integer stopsNeededFrom(Integer minute) {
         return minute + 1;
     }
 }

@@ -1,6 +1,6 @@
 # TODO
 
-- How many number of stops it takes to have all drivers on board with the latest gossips?
+- Try to generalize the `` to work with an arbitrary number of drivers
 - Introduce a builder for a Driver
 
 # Domain
