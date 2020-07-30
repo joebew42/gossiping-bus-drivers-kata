@@ -1,3 +1,4 @@
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static java.lang.Integer.valueOf;
@@ -32,5 +33,18 @@ public class DriverTest {
         assertEquals(valueOf(2), driverA.knownGossips());
         assertEquals(valueOf(3), driverB.knownGossips());
         assertEquals(valueOf(3), driverC.knownGossips());
+    }
+
+    @Test
+    @Ignore
+    public void drivers_not_exchanges_the_same_gossip_twice() {
+        Driver driverA = new Driver();
+        Driver driverB = new Driver();
+
+        driverA.exchangeGossips(driverB);
+        driverB.exchangeGossips(driverA);
+
+        assertEquals(valueOf(2), driverA.knownGossips());
+        assertEquals(valueOf(2), driverB.knownGossips());
     }
 }

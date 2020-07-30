@@ -1,13 +1,13 @@
 public class Driver {
 
-    private Integer knownGossips;
+    private Integer numberOfKnownGossips;
 
     public Driver() {
-        knownGossips = 1;
+        numberOfKnownGossips = 1;
     }
 
     public Integer knownGossips() {
-        return knownGossips;
+        return numberOfKnownGossips;
     }
 
     public void exchangeGossips(Driver other) {
@@ -16,6 +16,6 @@ public class Driver {
     }
 
     private void addGossips(Integer gossips) {
-        this.knownGossips += gossips;
+        this.numberOfKnownGossips += gossips;
     }
 }
