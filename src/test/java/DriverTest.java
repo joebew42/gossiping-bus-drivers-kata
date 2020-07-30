@@ -1,12 +1,13 @@
 import org.junit.Test;
 
-import java.util.List;
-
 import static java.lang.Integer.valueOf;
 import static java.util.List.of;
 import static org.junit.Assert.assertEquals;
 
 public class DriverTest {
+
+    public static final int ONE = 1;
+
     @Test
     public void a_driver_always_start_knowing_only_one_gossip() {
         assertEquals(valueOf(1), new Driver().numberOfGossips());
@@ -51,13 +52,10 @@ public class DriverTest {
 
     @Test
     public void when_drivers_not_end_up_at_the_same_stop_they_not_exchange_gossips() {
-        Route routeA = new Route(of(1));
-        Route routeB = new Route(of(2));
+        Driver driverA = new Driver(new Route(of(1)));
+        Driver driverB = new Driver(new Route(of(2)));
 
-        Driver driverA = new Driver(routeA);
-        Driver driverB = new Driver(routeB);
-
-        driverA.exchangeGossipsAtMinute(1, driverB);
+        driverA.exchangeGossipsAtMinute(ONE, driverB);
 
         assertEquals(valueOf(1), driverA.numberOfGossips());
         assertEquals(valueOf(1), driverB.numberOfGossips());
