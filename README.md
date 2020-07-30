@@ -1,6 +1,6 @@
 # TODO
 
-- Try to generalize the `` to work with an arbitrary number of drivers
+- Try to generalize the method `stopsNeededToShareAllGossips` to work with an arbitrary number of drivers
 - Introduce a builder for a Driver
 
 # Domain
